@@ -3,7 +3,7 @@
 <head>
   <title>Your To Do List</title>
   <meta author: "Paul Santos">
-  <link rel="stylesheet" type="text/css" href="styles/paper.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/paper/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/home.css">
   
 </head>
@@ -68,12 +68,12 @@
             </form>
             <div class="clearfix"></div>
           </div>
-          <div class="panel-body">
+          <div class="panel-body toDoBody">
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h4 class="panel-title pull-left">To Do Title</h4>
-                <button type="button" class="btn btn-warning btn-circle pull-right" id="completedBtn"><i class="glyphicon glyphicon-remove"></i></button>
-                <button type="button" class="btn btn-info btn-circle pull-right" id="deleteListBtn"><i class="glyphicon glyphicon-ok"></i></button>
+                <button type="button" class="btn btn-warning btn-circle pull-right" id="deleteListBtn"><i class="glyphicon glyphicon-remove"></i></button>
+                <button type="button" class="btn btn-info btn-circle pull-right" id="completedBtn"><i class="glyphicon glyphicon-ok"></i></button>
                 <div class="clearfix"></div>
               </div> <!-- end panel-heading -->
               <div class="panel-body">
@@ -104,7 +104,7 @@
 
               </div> <!-- end panel-heading -->
               <div class="panel-body">
-                <textarea class="form-control" rows="4" placeholder="To Do?"></textarea>
+                <textarea class="form-control" rows="4" id="toDoText" placeholder="To Do?"></textarea>
               </div>
             </div> <!-- end panel panel-primary -->
           </div> <!-- end panel body -->
