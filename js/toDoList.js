@@ -41,9 +41,10 @@ $(document).ready(function(){
 
 // complete event to apply strike through
   $(".panel").on("click", ".completedBtn", function(){
-    $(this).siblings(".panel-title").contents().wrap("<del/>");
-    $(this).parent().parent().children(".panel-body").children().contents().wrap("<del/>");
-    console.log($(this).parent().parent().children(".panel-body").children());
+
+    $(this).siblings(".panel-title").addClass("strike-through");
+    $(this).parent().parent().children(".panel-body").children().addClass("strike-through");
+    $(this).remove();
   });
 
 // delete event to delete the list
