@@ -2,7 +2,8 @@ $(document).ready(function(){
 
 
   // add button event
-  $("#addButton").on("click", function() {
+  $("#addButton").on("click", function(e) {
+    e.preventDefault();
     var toDoTitle = $("#newTitle").val().trim();
     var toDoText = $("#toDoText").val().trim();
     if (!toDoTitle || !toDoText) {
@@ -34,6 +35,8 @@ $(document).ready(function(){
     deleteGlyph = null;
     checkBtn = null;
     checkGlyph = null;
+    $("#newTitle").val("").focus();
+    $("#toDoText").val("");
   });
 
 // complete event to apply strike through
