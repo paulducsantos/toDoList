@@ -8,12 +8,16 @@ $(document).ready(function(){
     if (!toDoTitle || !toDoText) {
       return;
     };
-
+    var deleteListBtn = $("<button>").attr("type", "button").addClass("btn btn-warning btn-circle pull-right deleteListBtn");
+    var deleteGlyph = $("<i>").addClass("glyphicon glyphicon-remove");
+    deleteListBtn.append(deleteGlyph);
+    var checkBtn = $("<button>").attr("type", "button").addClass("btn btn-info btn-circle pull-right completedBtn");
+    var checkGlyph = $("<i>").addClass("glyphicon glyphicon-ok")
+    checkBtn.append(checkGlyph);
     var newPanel = $("<div>").addClass("panel panel-primary").hide();
     var newPanelHeading = $("<div>").addClass("panel-heading");
     var panelTitle = $("<h4>").addClass("panel-title pull-left").append(toDoTitle);
-    var deleteListBtn = $("#deleteListBtn").clone();
-    var checkBtn = $("#completedBtn").clone();
+
     var clearfix = $("<div>").addClass("clearfix");
     newPanelHeading.append(panelTitle).append(deleteListBtn).append(checkBtn).append(clearfix);
 
@@ -25,6 +29,11 @@ $(document).ready(function(){
 
     $(".toDoBody").append(newPanel);
     newPanel.fadeIn(1500);
+
+    deleteListBtn = null;
+    deleteGlyph = null;
+    checkBtn = null;
+    checkGlyph = null;
   });
 
 // complete event to apply strike through
@@ -35,15 +44,19 @@ $(document).ready(function(){
   });
 
 // delete event to delete the list
-  $("#deleteListBtn").on("click", function(){
-    alert("delete");
-  });
+  $(".panel").on("click", ".deleteListBtn", function(){
 
+    $(this).parent().parent().fadeTo("slow", 0, function(){
+      $(this).slideUp("slow", function(){
+        $(this).remove();
+      })
+     
+    });
+  });
 
   // search button to search the lists for any words
   $("#searchBtn").on("click", function(){
     alert("search");
   });
-
 
 });
