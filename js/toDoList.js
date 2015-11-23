@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-  // add button event
+  // adds the content from title and text box to the left panel
   $("#addButton").on("click", function(e) {
     e.preventDefault();
     var toDoTitle = $("#newTitle").val().trim();
